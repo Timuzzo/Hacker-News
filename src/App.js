@@ -13,7 +13,7 @@ function App() {
   // Store url we want to get our data from in the variable url
   const baseUrl = "http://hn.algolia.com/api/v1/search_by_date?hitsPerPage=50&page=1";
   const [url,setUrl] = useState(baseUrl);
-  const [spinner, setSpinner] = useState(false);
+  const [spinner, setSpinner] = useState(true);
 
  
   // function to get data from url (in async/await-Syntax, the are alternatives like axios or .then .catch)
@@ -24,19 +24,24 @@ function App() {
       const res = await fetch(url);
       // convert from json-format to javascript-object (so that we can work on it in javascript)
       const data = await res.json();
-      // store only the hits part of the object in toast (with calling the setTaost-function)
+      // store only the hits part of the object in toast (with calling the setToast-function)
       setToast(data.hits);
       setSpinner(false)
+      if(data.hits.length == 0){
+      alert("No results found.")        
+      }
     }
     // if it doesnt succeed, catch the error(!) and print it to the console
     catch(error){
       console.log(error);
+      alert ("Server error: There is a problem with your search. Please try again")
+
     }
   }
 
   //call getTaost-function with use Effect (with empty dependency so that it only executes once)
   useEffect(() => {
-    getToasts();
+    setTimeout(()=>{getToasts()},1000) 
   },[url])
   
 //title, story_url, points, author, created_at
@@ -54,13 +59,14 @@ function App() {
             //same for the url
             let actualUrl = item.url;
             if (actualUrl== null) actualUrl = item.story_url
-
+            
             return (
               //Add the component NewsItem to our HTML and also export certain parts of our data to the NewsItem (so that we can work on it there)
-              <NewsItem title={actualTitle} story_url={actualUrl} /* points={Math.floor(Math.random() * 999)} */ author={item.author} created_at={item.created_at} />
+              spinner?"":<NewsItem title={actualTitle} story_url={actualUrl} author={item.author} created_at={item.created_at} />
             )
           }
           )}
+
         </ol>
 
     </div>

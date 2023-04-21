@@ -1,4 +1,5 @@
 import { SpinnerRoundOutlined } from 'spinners-react';
+import '../App.css'
 
 export default function NavBar({userInput, setUserInput, setUrl, baseUrl, spinner, setSpinner}) {
 
@@ -11,14 +12,12 @@ function handleClick(e) {
 }
     
 const handleChange = (e) => {
-    
-    let value = e.target.value;
-    setUserInput(value);
+    setUserInput(e.target.value);
 }
 return(
-    <div>
+    <div className="NavBar">
         <button onClick={()=>{
-            setUrl("http://hn.algolia.com/api/v1/search_by_date?hitsPerPage=50&page=1");
+            setUrl(baseUrl);
             setUserInput("");
         }}>Home</button>
         <form>

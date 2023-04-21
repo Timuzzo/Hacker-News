@@ -1,8 +1,21 @@
-/* .news-list{
-    display: flex;
-    flex-direction: center;
-    align-items: flex-start;
+.App{
+    max-width: 80vw;
+    margin: auto;
 }
-.news-item {
 
-} */
+.NavBar{
+    background-color: rgb(255, 102, 0);
+}
+
+.news-item{
+    padding: 5px 0;
+    font-size: 0.9rem;
+}
+.news-list{
+    background-color: rgb(246, 246, 239);
+    margin-top: 0;
+}
+
+.news-list .newsItem-secondLine{
+    font-size: 0.6rem;
+}
