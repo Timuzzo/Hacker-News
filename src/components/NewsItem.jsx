@@ -16,7 +16,7 @@ export default function NewsItem({title, story_url, points, author, created_at, 
         <div className="news-item">
             <li key={title}> Title: {title} Story-URL: <a href={story_url}>See Article</a> <br />
             <div className="newsItem-secondLine">
-                Points: {random} Author: {author} Created: <ReactTimeAgo date={created_at} locale="en-US"/>
+                Points: {random} by {author} Created: <ReactTimeAgo date={created_at} locale="en-US"/>
             </div>
             </li>
         </div>

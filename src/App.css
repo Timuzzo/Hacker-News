@@ -1,6 +1,7 @@
 .App{
     max-width: 80vw;
     margin: auto;
+    min-height: 100vh;
 }
 
 .NavBar{
@@ -18,4 +19,20 @@
 
 .news-list .newsItem-secondLine{
     font-size: 0.6rem;
+    color: rgba(0, 0, 0, 0.5);
 }
+
+.spinner{
+    display: block;
+    padding-left: 42.5%;
+    padding-top: 20%;
+    padding-bottom: 100%;
+}
+
+
+
+/* size	50	number or string	Set the size as number of pixels or any valid CSS string (e.g. size="100%").
+thickness	100	number	Set lines width as a percentage of default thickness.
+сolor	'#38ad48'	string	Set the color. Can be set to any valid CSS string (hex, rgb, rgba).
+secondaryColor	'rgba(0,0,0,0.44)'	string	Set the secondary color. Can be set to any valid CSS string (hex, rgb, rgba).
+speed	100	number	Set the animation speed as a percentage of default speed. */

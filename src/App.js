@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
 import NewsItem from "./components/NewsItem";
 import PaginatedItems from "./components/PaginatedItems"
+import { SpinnerRoundOutlined } from 'spinners-react';
 import './App.css';
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
         {/* <PaginatedItems /> */}
         <ol className="news-list">
           {/* Map over the data in toast (that contain our articles) and return something for every article(item) */}
+          <SpinnerRoundOutlined className="spinner" enabled={spinner}/>
           {toast.map((item)=>{
             //sometimes the value of item.title is "null", so if that is the case, use item.story_title instead, so the title is not empty
             let actualTitle = item.title;
