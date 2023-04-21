@@ -1,34 +1,141 @@
 .App{
-    max-width: 80vw;
+    max-width: 85vw;
     margin: auto;
+    margin-top: 8px;
     min-height: 100vh;
+    background-color: rgb(246, 246, 239);
+    font-family: Verdana, Geneva, sans-serif;
 }
 
+/* NavBar */
 .NavBar{
-    background-color: rgb(255, 102, 0);
+    background-color: #ff6600;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    align-items: center;
 }
 
+.NavBar img{
+    height: 18px;
+    width: 18px;
+}
+
+.NavBar p{
+    margin: 0px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-left: 4px;
+}
+
+.NavBar-left{
+    display: flex;
+}
+
+.NavBar-left:hover{
+    cursor: pointer;
+}
+
+#we{
+    font-size: 0.8rem;
+    padding-left: 5px;
+    flex-grow: 1;
+}
+
+/* NewsList */
 .news-item{
     padding: 5px 0;
     font-size: 0.9rem;
 }
-.news-list{
-    background-color: rgb(246, 246, 239);
-    margin-top: 0;
+
+.news-item li{
+    list-style: none;
 }
 
-.news-list .newsItem-secondLine{
-    font-size: 0.6rem;
-    color: rgba(0, 0, 0, 0.5);
+.news-list{
+    background-color: rgb(246, 246, 239);
+    margin-top: 7px;
+    padding-left: 0;
+    padding-left: 2.1em;
+}
+
+.newsItem-firstLine{
+    font-size: 0.8rem;
+}
+
+.newsItem-secondLine{
+    font-size: 0.7rem;
+    color: #828282;
+    display: flex;
+    justify-content: left;
+    padding-top: 2px;
+}
+
+.newsItem-secondLine p{
+    margin: 0;
+}
+
+#counterListItem{
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -2.7em;
+    text-align: right;
+    color:#828282;
+}
+
+#upvoteListItem{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-inline: 3px;
+    border: none;
+}
+
+.newsItem-firstLine a{
+    color: black;
+    text-decoration: none;
+}
+
+#searchBar input:focus{
+    outline-style: dotted;
+}
+
+#underline{
+    font-size: 0.7rem;
+    color: #828282;
+    text-decoration: underline;
+    padding-left: 5px;
+}
+
+.clickable:hover{
+    cursor: pointer;
+    padding: 0;
+
+}
+
+/* Spinner */
+
+.spinnerContainer{
+    display: flex;
+    justify-content: center;
+    margin-left: -2.1em;
 }
 
 .spinner{
     display: block;
-    padding-left: 42.5%;
-    padding-top: 20%;
+    margin-top: 5rem;
     padding-bottom: 100%;
 }
 
+/* No Result */
+
+.noResults{
+    text-align: center;
+    margin-top: 5rem;
+    line-height: 1.5rem;
+    width: auto;
+    margin-left: -2.1em;
+}
 
 
 /* size	50	number or string	Set the size as number of pixels or any valid CSS string (e.g. size="100%").
