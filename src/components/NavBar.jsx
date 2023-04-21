@@ -1,16 +1,16 @@
 import '../App.css'
+import logo from './img/W.png';
 
-export default function NavBar({userInput, setUserInput, setUrl, baseUrl, spinner, setSpinner}) {
+export default function NavBar({userInput, setUserInput, setUrl, baseUrl, setSpinner, setNotFound}) {
 
     function handleClick(e) {
         e.preventDefault()
+        setNotFound(false)
         const searchUrl = `http://hn.algolia.com/api/v1/search_by_date?query=${userInput}&tags=story` 
         if(userInput === "") {
-            console.log(`this is the if statement`)
             alert("Type something in the search field")
         }
         else {
-            console.log("this is the else statement")
             setSpinner(true)
             setUrl(searchUrl)
         }
@@ -22,11 +22,12 @@ export default function NavBar({userInput, setUserInput, setUrl, baseUrl, spinne
     }
     return(
         <div className="NavBar">
-            <button onClick={()=>{
+            <div class="NavBar-left" onClick={()=>{
                 setUrl(baseUrl);
                 setUserInput("");
-            }}>Home</button>
-            <form>
+            }}><img src={logo}/><p>Checker News</p></div>
+            <div id="we">by Anton | Timofey | Daniel O. | Puri</div>
+            <form id="searchBar">
                 <input type="text" value={userInput} onChange={(e)=>handleChange(e)}></input>
                 <button onClick={handleClick}>Search</button>
             </form>
